@@ -30,3 +30,18 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name}: {self.discription}"
+
+
+class ContactData(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    phone = models.CharField(max_length=20, verbose_name='Телефон')
+    message = models.TextField(verbose_name='Сообщение')
+    timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время')
+
+    class Meta:
+        ordering = ['-timestamp']
+        verbose_name = 'Контактные данные'
+        verbose_name_plural = 'Контактные данные'
+
+    def __str__(self):
+        return f"{self.name} ({self.timestamp.isoformat()})"
