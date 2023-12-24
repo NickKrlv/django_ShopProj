@@ -1,14 +1,13 @@
 {% extends 'catalog/base.html' %}
 
-{% block title %}Создание продукта{% endblock %}
+{% block title %}Добавить Продукт{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Создание продукта</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Создать продукт</button>
-    </form>
-</div>
+<h2>Добавить Продукт</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+</form>
 {% endblock %}
+
