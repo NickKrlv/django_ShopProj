@@ -9,7 +9,7 @@ urlpatterns = [
                   path('', home, name='home'),
                   path('contacts/', contacts, name='contacts'),
                   path('products/', products, name='products'),
-                  path('product/<int:product_id>/', product_detail, name='product_detail'),
+                  path('product/<int:pk>/', product_detail, name='product_detail'),
                   path('create_product/', create_product, name='create_product'),
                   path('admin/', admin.site.urls),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

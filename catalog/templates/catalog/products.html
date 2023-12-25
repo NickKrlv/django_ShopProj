@@ -2,6 +2,8 @@
 
 {% block title %}Продукты{% endblock %}
 
+{% load catalog_extras %} {# Загрузка тегов и фильтров из вашего приложения #}
+
 {% block content %}
 <div class="container mt-5">
     <div class="row">
@@ -11,7 +13,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         {% if product.image %}
-                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                            <img src="{{ product.image|my_media_filter }}" class="card-img-top" alt="{{ product.name }}">
+
                         {% else %}
                             <p>Изображение отсутствует</p>
                         {% endif %}
